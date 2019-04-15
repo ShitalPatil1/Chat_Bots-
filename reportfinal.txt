@@ -1,0 +1,290 @@
+\documentclass[a4paper,twoside]{report}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage[left=1.5in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{nomencl}
+\makenomenclature
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{bigstrut}
+\usepackage{cite}
+\usepackage{glossaries}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=blue,
+	linkcolor=blue,
+	urlcolor=blue
+}
+\usepackage{titlesec}
+
+\makeglossaries
+%----Title page-----%
+\newcommand{\setheaderfooter}{
+	\pagestyle{fancy}
+	\lhead{}
+	\chead{\itshape\nouppercase{Chat Bot's Builder}}
+	%\chead{header}
+	
+	\rhead{}
+	\lfoot{Information Technology Department}
+	\cfoot{}
+	\rfoot{{\textit \thepage}}
+	\renewcommand{\headrulewidth}{0.7pt}
+	\renewcommand\footrule{\begin{minipage}{1\textwidth}
+			\hrule width \hsize height 2pt \kern 1mm \hrule width \hsize
+		\end{minipage} \par}
+	
+}
+\pagenumbering{arabic}
+\begin{document}
+	\pagenumbering{gobble}
+	\large
+	{
+		\vspace*{\baselineskip}
+		{	
+			\bf
+			\begin{center}A\end{center}
+			\begin{center}
+				Project Report On\end{center}
+		}
+	}
+	\vspace*{\baselineskip}
+	\begin{center}\setstretch{1.7}
+		{
+			\fontsize{19}{0}
+			\bf{Chat Bots Builder}
+		}
+	\end{center}
+	\large\begin{center}Submitted\end{center}
+	\large\begin{center}in partial fulfillment of the requirement for the degree of\end{center}
+	\large{\bf{\begin{center}T.Y. B.TECH\end{center}
+			\begin{center}in\end{center}
+			\begin{center}Information Technology\end{center}
+	}}
+	\large\begin{center}\textit{by:}\end{center}
+	\large\begin{center}\bf Team NO : 03\end{center}
+	\large\begin{center}\bf Ms. Mayuri Maruti Gurav.
+		\hfill Roll NO. : 1754008
+	\end{center}
+	\large\begin{center}\bf Ms. Salomi Shanton Devkule.
+		\hfill Roll NO. : 1754001
+	\end{center}
+	\large\begin{center}\bf Mr. Kailash Gajendra Kadam.
+		\hfill Roll NO. : 1754005
+	\end{center}
+	\large\begin{center}\bf Ms. Neha Vijay Rokade.
+		\hfill Roll NO. : 1754011
+	\end{center}
+	\large\begin{center}\bf Ms. Shital Gopichand Patil.
+		\hfill Roll NO. : 1754013
+	\end{center}
+	\large\begin{center}\bf Ms. Shreya Madan Dixit.
+		\hfill Roll NO. : 1754021
+	\end{center}
+	\vspace*{\baselineskip}
+	\large\begin{center}Under the Guidance of \end{center}
+	\large\begin{center}\bf Prof. Savita P. Patil\end{center}
+	\vspace*{1\baselineskip}
+	\begin{center}\includegraphics[scale=0.5]{logo}\end{center}
+	\vspace*{\baselineskip}
+	\large\begin{center}\bf{Department Of Information Technology}\end{center}
+	\large\begin{center}K.E.Society's \end{center}
+	\large\begin{center}\bf{Rajarambapu Institute Of Technology, Rajaramnagar}\end{center}
+	\large\begin{center}\bf{An Autonomous Institute, Affiliated to Shivaji University, Kolhapur}\end{center}
+	\large\begin{center}\bf{2018-2019}\end{center}
+	
+	%----- Certificate Page-----------%
+	
+	\newpage
+	\cleardoublepage
+	\phantomsection
+	\pagenumbering{roman}
+	\setcounter{page}{2}
+	\addcontentsline{toc}{section}{\textit{CERTIFICATE}}
+	\large\begin{center}K.E.Society's\end{center}
+	\large\begin{center}\bf{Rajarambapu Institute Of Technology, Rajaramnagar}\end{center}
+	\large\begin{center}\bf{An Autonomous Institute, Affiliated to Shivaji University, Kolhapur}\end{center}
+	\large\begin{center}\bf{Department Of Information Technology}\end{center}
+	\begin{center}\includegraphics[scale=0.5]{logo}\end{center}
+	\begin{center}\fontsize{18}{0}\textbf{CERTIFICATE}\end{center}
+	\setstretch{2.0}{
+		\par This is to certify that the project work titled "Chat Bot's Builder" is submitted by,\
+		\par \textbf{Ms. Mayuri M. Gurav., Ms. Salomi S. Devkule., Mr. Kailash G. Kadam., Ms. Neha V. Rokade., Ms. Shital G. Patil., Ms. Shreya M. Dixit.}
+		for the partial fulfillment of the requirement for the degree of \textbf{T.Y. B.TECH Information Technology}at Rajarambapu Institute Of Technology (An Autonomous Institute), Affiliated to \textbf{Shivaji University, Kolhapur.}This preliminary report is the record of the students work carried out for the course : Project Work (Code : IT3561) under my supervision
+		and guidance.
+	}
+	\\\\
+	Mrs. S.P. Patil.\hfill \hspace*{1cm}
+	Dr. A.C. Admuthe.\hfill Dr. Mrs. S.S. Kulkarni.\\
+	\textbf{\hspace{1cm}Guide \hfill Head IT Dept. \hfill Director}\\
+	External Examiner's Signature:\\
+	1.-------------------------------(Name \hspace{4cm}                        )\\
+	2.-------------------------------(Name \hspace{4cm}                        )\\
+	Date:\\
+	Place: RIT,Rajaramnagar  
+	
+	%-----ACKNOWLEDGEMENTS page-----%
+	\newpage
+	\phantomsection
+	\addcontentsline{toc}{section}{\textit{ACKNOWLEDGEMENTS}}
+	\begin{center}\fontsize{18}{0} \textbf{ACKNOWLEDGEMENT}\end{center}
+	\setstretch{1.5}{
+		
+		It is our privilege to acknowledge with deep sense of gratitude to our project guide Mrs.S.P.Patil for his valuable suggestions and guidance throughout our course of study and project. We express our gratitude to \textbf {Prof. Amol C.Admute (Head of the Department)} for his kind help and co-operation.\\
+		\par We are highly obliged to the entire staff of Information Technology Department. for their kind co-operation and help. We also take this opportunity to thank all our colleagues who backed our interest by giving useful suggestion and all possible help.\\
+		
+	}
+	\begin{center}
+		Miss. Mayuri Maruti Gurav.    \hfill        1754008\\
+		Miss. Salomi Shanton Devkule.       \hfill        1754001\\
+		Miss. Kailash Gajendra Kadam.        \hfill       1754005\\
+		Miss. Neha Vijay Rokade.        \hfill         1754011\\
+		Miss.Shital Gopichand Patil.         \hfill       1754013\\
+		Miss. Shreya Madan Dixit.  \hfill     1754021
+		
+		
+	\end{center}
+\begin{document}
+		\tableofcontents
+		\section{Introduction}\label{sec:intro}
+		The Chat Bot's Builder Application provides correct prescription to patient releted to there symptoms. This application very useful in emergency time.Patient was indirectly interact with doctor.The following subsections of the Software Requirement Specification (SRS) document provide an overview of the entire about our application.   
+		\subsection{Objective}\label{sec:intro}
+		•	Identify important parameters for maintaining the query and patient health. \\ 
+		•	Build the chatbot for interaction between patient and Chat Bot System.\\ 
+		•	Identify implementation of machine learning algorithm that will help to provide prescription to the patient.
+		
+		\section{Literature Survey}\label{sec:lit}
+		While working with literature review we have gone through different disease predicting systems. They used different data mining and machine learning algorithms. They used Natural language processing for reading quries from the chat/communic-ation . We have all searched symptoms, treatments, hospitals or even doctors at one time. In a past survey, it was found that 72 percent of internet users looked for health information online. In future, people will get this information through chatbot. Over the coming decade's chatbot will change how we interact with doctors, something some large companies have already discovered and they are adding chatbots into their models.
+		DivyaMadhu[1]  proposed an idea in which the Data Mining can predict the diseases based on the symptoms and give the list of available treatments. If a person’s body is analyzed periodically, it is possible to predict any possible problem even before they start to cause any damage to the body. Some Challenges are research and implementation costs, and government regulations for the successful implementation of personalized medicine, they are not mentioned in the paper. Hameedullah Kazi[4], describes the development of a chatbot for medical students, that is based on the open source AIML based Chatterbean. The AIML based chatbot is customized to convert natural language queries into relevant SQL queries. A total of 97 question samples.were collected and then those questions were divided into categories depending on the type of question. According to the number of questions in each category the resultant categories were ranked. Questions were based on quries, where 47 percent are of posed questions. Other categories has less than 7 percent. The system has not been specially designed for the task of supporting natural dialog in chatbots or, providing responses to student queries.\\
+		
+		\section{Problem Description}\label{sec:problemd}
+		Chat bots will provide with a doctor in the pocket. They can always ask medical questions and receive answers promptly and in a timely manner from doctors. Chat bots will be vital as user or patient can chat with our exiting system with natural language and our system will perform algorithm on that for collecting required data from the natural language and give that selected data for next operation like sending next question, options and next some data requirements to the system.(they will be able to collect patient history,provide potential diagnostic ,prescribe medication). And the conversation generated by chat bots will help management to analyze. Data the needs of clients. An intelligent chat bot can guide parents or patients by understanding and assess symptoms that they are experiencing and identify the care that they need. With a chat bot that your doctor,patients can receive immediate assistance at the touch of your fingerprint. \\ 
+		\subsection{Exiting Systems}
+		1.	Data modeling for health care applications \\
+		2.	Pharmabot: A Pediatric Generic Medicine Consultant Chatbot\\
+		3.	A Self-Diagnosis Medical Chatbot Using Artificial Intelligence\\
+		4.	Vitro medical diagnostics (IVD)\\
+		5.	Health Insurance.\\
+		All the literature surveys have done by us mostly use decision tree and Naive Bayes algorithm. Decision tree gives result according to conditions present on the nodes.\\
+		\subsection{Exiting Techniques}
+		\textbf{Algorithms:}\\
+		\textbf{	1.Decision tree : }Decision tree algorithm falls under the category of the supervised learning. They can be used to solve both regression and classification problems.
+		Decision tree uses the tree representation to solve the problem in which each leaf node corresponds to a class label and attributes are represented on the internal node of the tree.
+		We can represent any boolean function on discrete attributes using the decision tree.
+		\\
+		\textbf{	2.Naive Bayes: }A naive Bayes classifier is an algorithm that uses Bayes' theorem to classify objects. Naive Bayes classifiers assume strong, or naive, independence between attributes of data points. Popular uses of naive Bayes classifiers include spam filters, text analysis and medical diagnosis. These classifiers are widely used for machine learning because they are simple to implement.Naive Bayes is also known as simple Bayes or independence Bayes.
+		\\
+		\textbf{3.Ada-boost : }AdaBoost is a type of algorithm that uses an ensemble learning approach to weight various inputs. It was designed by Yoav Freund and Robert Schapire in the early 21st century. It has now become somewhat of a go-to method for different kinds of boosting in machine learning paradigms. \\
+		\subsection{Proposed System}\label{sec:system}
+		\begin{figure}[tbh]
+			\includegraphics[scale=1]{system.png}
+			\caption{Proposed System}
+			\label{Fig:Proposed System}
+		\end{figure}
+		\subsection{Problem Statement}\label{sec:problem}
+		As last decade the patients or the people who are suffering from any health problem they went to doctor and tell their problems to him or her and according to symptoms and doctor will prescribe medicines. In case of emergency if patient could not able to reach to hospital, he or she will communicate with chat bot and get right medical support.
+		\subsection{Scope}\label{sec:scope}
+		\begin{itemize}
+			\item 	Identify important parameters for maintaining the query and patient health.
+			\item 	Build the chatbot for interaction between patient and Chat Bot System.
+			\item 	Identify implementation of machine learning algorithm that will help to provide prescription to the patient.
+			
+		\end{itemize}
+\subsection{System Requirements}\label{sec:requirements}
+		\subsubsection{Software Requirements}\label{sec:soft}
+		\textbf{1.Android :}
+		Android version is 3.3.1Android is required for design the Chat bots Builder. The overall design of chat we will cover in android as well as the natural language processing.\\
+		\textbf{2.Database :}
+		We will use Fire base database to storing the information about symptoms given by him/her and according to symptoms the prescription.
+		\subsubsection{Hardware Requirements}\label{sec:hard}
+		\textbf{1.Computer System:}
+		We are using the system which has following specifications:\\
+		\textbf{Processor :} MIN i3\\
+		\textbf{RAM :} 8 GB\\
+		\textbf{Hard disk :} 1 TB\\
+		\textbf{Graphics card :} MIN 2GB\\
+		\newpage
+	
+		\section{System Design}\label{sec:Design}
+		
+		\subsection{System Architecture}\label{sec:Archi}
+		\par When patient enter their report with their quires then chat bot should process the query. If the query is processed successful then it is going to understandable phase otherwise go to user input phase. In understandable phase if the query is understandable then it goes to the consultation phase and Looking for details phase otherwise query goes to the user input phase. In consultation phase it will check for the symptoms and prescription in chat bot database. Then the chat bot asks new next question to patient to understand patient disease then patient should enter the answer. if patient can’t give the response to chat bot then chat bot can ask question again to patient otherwise chat bot check the answer of patient in chat bot database. After looking for details phase chat bot give the good possible suggestion ailments, symptoms, prescription of medicine, age, side effects.
+		\begin{figure}[tbh]
+			\includegraphics[width=4in]{system.png}
+			\caption{System Architecture}
+			\label{Fig:System Architecture}
+		\end{figure}
+		\newpage
+		\subsection{Data Flow Diagram}\label{sec:dfd}
+		\subsubsection{Data Flow Diagram Level 0 :}
+		\begin{figure}[tbh]
+			\includegraphics[scale=1]{DFD_z.png}
+			\caption{Data Flow Diagram Level 0 }
+			\label{Fig:Data Flow Diagram Level 0}
+		\end{figure}
+		\newpage
+		\subsubsection{Data Flow Diagram Level 1 :}
+		\begin{figure}[tbh]
+			\includegraphics[scale=0.8]{DFD_o.png}
+			\caption{Data Flow Diagram Level 1 }
+			\label{Fig:Data Flow Diagram Level 1}
+		\end{figure}
+		\newpage
+		\subsubsection{Data Flow Diagram Level 2 :}
+		\begin{figure}[tbh]
+			\includegraphics[scale=1]{DFD_t}
+			\caption{Data Flow Diagram Level 2 }
+			\label{Fig:Data Flow Diagram Level 2}
+		\end{figure}
+		\newpage
+		\subsection{UML Diagram :}\label{sec:UML}
+		\subsubsection{Use Case Diagram :}
+		\begin{figure}[!htb]
+			\includegraphics[scale=0.8]{usecase.png}
+			\caption{Use Case Diagram }
+			\label{Fig:Use Case Diagram}
+		\end{figure}
+		\newpage
+		\subsubsection{Class Diagram:}
+		\begin{figure}[tbh]
+			\includegraphics[scale=0.8]{classdia.png}
+			\caption{Class Diagram }
+			\label{Fig:Class Diagram}
+		\end{figure}
+		\newpage
+		\subsubsection{Sequence Diagram:}
+		\begin{figure}[tbh]
+			\includegraphics[scale=0.8]{seq.png}
+			\caption{Sequence Diagram }
+			\label{Fig:Sequence Diagram}
+		\end{figure}
+		\newpage
+		\subsubsection{Collaboration Diagram:}
+		\begin{figure}[tbh]
+			\includegraphics[scale=0.8]{colla.png}
+			\caption{Collaboration Diagram }
+			\label{Fig:Collaboration Diagram}
+		\end{figure}
+		%-------Testing and Deployment---------%
+		\newpage
+		\section{Reference}\label{sec:test}
+		\begin{itemize}
+			\item 	Pravin Shinde, Prof.Sanjay Jadhav, “Health Analysis System Using Machine Learning” International Journal of Computer Science and Information Technologies, ISSN: 0975-9646, Vol. 5 (3) , 2014, 3928-3933
+			
+			\item Pharmabot: A Pediatric Generic Medicine Consultant Chatbot Benilda Eleonor V. Comendador, Bien Michael B. Francisco, Jefferson S. Medenilla, Sharleen Mae T. Nacion, and Timothy Bryle E. Serac Polytechnic University of the Philippines, Manila, Philippines
+			
+			\item 	A Self-Diagnosis Medical Chatbot Using Artificial Intelligence Divya S1 , Indumathi V1 , Ishwarya S1 , Priyasankari M1 , Kalpana Devi S2 1UG students, 2Assistant Professor Department of Computer Science and Engineering, Easwari Engineering College, Chennai--600089, India 
+			
+			\item  HameedullahKazi,B.S. Chowdhry,ZeeshaMemon, ”MedChatBot: An UMLS based Chatbot for Medical Students”, International Journal of Computer Applications (0975 – 8887)Volume 55– No.17, October 2016
+			\item https://www.google.com/search?rlz=1C1CHBF_enIN822IN822&biw=1536&bih=706&tbm=isch&sa=1&ei=ObxOXJugGYHe9QOh5aSoCQ&q=chat+bots+digram+for+medicator&oq=chat+bots+digram+for+medicator&gs_l=img.3...75062.122999..123197...3.0..0.302.5196.0j20j6j2......1....1..gws-wiz-img
+		
+		
+	\end{document}
+\end{document}
+
+
+
+
